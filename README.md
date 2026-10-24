@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI-Powered Financial Fraud Detection System
 
 **Duration**: Dec 2025 – Feb 2026
@@ -62,3 +63,6 @@ python src/prediction.py
 
 ## Results
 The model uses `SMOTE` to dramatically improve metric **Recall**, ensuring we identify as many fraudulent transactions as possible. See the `outputs/` folder for the Confusion Matrix and ROC AUC curve confirming the model's reliability in classifying unseen test data.
+=======
+# FraudShield-ML
+>>>>>>> origin/main
