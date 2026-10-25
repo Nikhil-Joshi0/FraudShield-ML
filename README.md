@@ -1,68 +1,111 @@
-<<<<<<< HEAD
-# AI-Powered Financial Fraud Detection System
+FraudShield: ML-Based Financial Fraud Detection
 
-**Duration**: Dec 2025 – Feb 2026
+FraudShield is a machine learning project that identifies potentially fraudulent financial transactions using Logistic Regression. It applies data preprocessing, feature engineering, and model evaluation techniques to classify transactions as fraudulent or legitimate.
 
-## Project Overview
-This project involves an end-to-end Machine Learning pipeline designed to detect fraudulent financial transactions. It addresses common real-world financial data challenges, heavily focusing on handling imbalanced classes and building robust evaluation mechanisms. 
+The project demonstrates how machine learning can help analyze financial transaction data and support fraud detection.
 
-The primary model used is **Logistic Regression**, which provides explainability and acts as an excellent baseline for tabular structured data in financial domains.
+Features
 
-## Methodology
-The pipeline consists of modularized steps:
-1. **Data Generation/Loading**: Uses synthesized mock data showing normal user patterns alongside anomalous fraudulent activities (e.g., account drains, high-amount transfers).
-2. **Data Preprocessing**: Handling missing values, cleaning, and categorical encoding. High-cardinality IDs are dropped for linear model simplicity.
-3. **Feature Engineering**: Creating time-based features and behavioral interaction features (e.g., `balance_diff`). Features are subsequently standardized using `StandardScaler`.
-4. **Resampling**: Uses **SMOTE** (Synthetic Minority Over-sampling Technique) to algorithmically balance the training data, solving the problem where the model becomes biased toward the non-fraud majority class.
-5. **Model Training**: Logistic Regression trained on the geometrically balanced SMOTE data.
-6. **Evaluation**: Instead of relying purely on accuracy, the model evaluates on Precision, Recall, and F1-score to reduce False Negatives (missed frauds). Confusion Matrix and ROC Curves visualize performance.
+* Transaction Classification: Classifies transactions as fraudulent or legitimate.
+* Data Preprocessing: Prepares structured transaction data for model training.
+* Feature Engineering: Processes relevant input features to support model learning.
+* Machine Learning: Uses Logistic Regression for binary classification.
+* Model Evaluation: Evaluates performance using accuracy, precision, and recall.
 
-## Folder Structure
-```
-fraud detection system/
-│
-├── data/
-│   └── transactions.csv         # Generated mock data
-├── src/
-│   ├── data_generator.py        # Generates synthetic structured datasets
-│   ├── data_preprocessing.py    # Handling NaNs, encoding
-│   ├── feature_engineering.py   # Synthesizing and scaling features
-│   ├── model_training.py        # SMOTE and Logistic Regression implementation
-│   ├── evaluation.py            # Model metrics and visualizations 
-│   └── prediction.py            # Inference engine for single transactions
-├── outputs/
-│   ├── confusion_matrix.png
-│   ├── roc_curve.png
-│   ├── class_distribution.png
-│   ├── logistic_model.pkl       # Saved trained model
-│   └── scaler.pkl               # Saved fitted scaler
-├── main.py                      # Core execution orchestrator
-├── requirements.txt
-└── README.md
-```
+Tech Stack
 
-## Setup Instructions
+* Language: Python
+* Libraries: NumPy, Scikit-learn
+* Machine Learning Algorithm: Logistic Regression
+* Concepts: Data Preprocessing, Feature Engineering, Binary Classification, Model Evaluation
 
-**1. Create virtual environment and install dependencies**
-```bash
+How It Works
+
+The project follows a machine learning workflow:
+
+1. Data Preparation: Load and prepare the transaction dataset.
+2. Preprocessing: Clean and transform the data into a suitable format for training.
+3. Feature Engineering: Prepare the input features used by the model.
+4. Model Training: Train a Logistic Regression classifier using the prepared data.
+5. Prediction: Use the trained model to classify transactions.
+6. Evaluation: Measure model performance using accuracy, precision, and recall.
+
+Evaluation Metrics
+
+The model uses the following metrics to evaluate its performance:
+
+* Accuracy: Measures the proportion of correctly classified transactions.
+* Precision: Measures how many transactions predicted as fraudulent are actually fraudulent.
+* Recall: Measures how many actual fraudulent transactions are correctly identified.
+
+Precision and recall are particularly important in fraud detection because false alarms and missed fraudulent transactions can have different consequences.
+
+Getting Started
+
+Prerequisites
+
+Make sure Python and pip are installed on your system.
+
+1. Clone the Repository
+
+git clone https://github.com/Nikhil-Joshi0/FraudShield-ML.git
+cd FraudShield-ML
+
+2. Create a Virtual Environment
+
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
-pip install -r requirements.txt
-```
 
-**2. Run the full pipeline:**
-```bash
-python main.py
-```
-This will automatically generate the data if `data/transactions.csv` is missing, run all pipelines, print metrics, and save output charts to the `outputs/` directory.
+Activate the environment.
 
-**3. Test Single Prediction:**
-```bash
-python src/prediction.py
-```
+macOS / Linux:
 
-## Results
-The model uses `SMOTE` to dramatically improve metric **Recall**, ensuring we identify as many fraudulent transactions as possible. See the `outputs/` folder for the Confusion Matrix and ROC AUC curve confirming the model's reliability in classifying unseen test data.
-=======
-# FraudShield-ML
->>>>>>> origin/main
+source venv/bin/activate
+
+Windows:
+
+venv\Scripts\activate
+
+3. Install Dependencies
+
+pip install numpy scikit-learn
+
+Install any additional dependencies required by the project.
+
+4. Run the Project
+
+Run the project’s Python entry-point file or notebook according to the repository structure.
+
+Ensure that the dataset is available at the path expected by the code before running the model.
+
+Project Structure
+
+The exact structure depends on the files included in the repository. A typical layout is:
+
+FraudShield-ML/
+├── data/               # Transaction dataset, if included
+├── notebooks/          # Jupyter notebooks, if used
+├── src/                # Source code, if organized separately
+├── requirements.txt    # Python dependencies, if provided
+└── README.md
+
+Learning Outcomes
+
+This project demonstrates practical application of:
+
+* Supervised machine learning
+* Binary classification
+* Data preprocessing and feature engineering
+* Logistic Regression
+* Model evaluation using accuracy, precision, and recall
+* Python-based machine learning workflows
+
+Limitations
+
+Model performance depends on the quality of the dataset, feature selection, and training process. The project is intended for learning and experimentation and should not be treated as a production-ready financial fraud prevention system.
+
+Author
+
+Nikhil Joshi
+
+* GitHub: Nikhil-Joshi0
+* Project: FraudShield — ML-Based Financial Fraud Detection
